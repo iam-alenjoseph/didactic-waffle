@@ -1,0 +1,23 @@
+# Generative Diffusion Model for Video
+# Developed in collaboration with researchers 
+
+# Deep Learning Framework & Hugging Face
+torch>=2.0.0
+torchvision>=0.15.0
+diffusers>=0.25.0
+accelerate>=0.26.0
+transformers>=4.36.0
+
+# Scientific Computing & Computer Vision
+numpy>=1.24.0
+scipy>=1.10.0
+scikit-image>=0.21.0
+pillow>=9.5.0
+
+# Configuration & Utilities
+pyyaml>=6.0
+tqdm>=4.65.0
+
+# Optional Visualizer & Dashboard
+gradio>=4.0.0
+

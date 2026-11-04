@@ -1,0 +1,81 @@
+# Default Configuration for Generative Diffusion Model for Video
+# Developed in collaboration with researchers from Google DeepMind and ASU
+
+project:
+  name: "GenerativeDiffusionModelForVideo"
+  version: "1.0.0"
+  description: "Spatio-Temporal DDPM for video synthesis with multimodal conditioning (RGB, Depth, Normal maps)"
+  seed: 42
+  device: "cuda" # "cuda", "mps", "cpu"
+
+dataset:
+  name: "unreal_multimodal_video"
+  data_dir: "./data/unreal_dataset"
+  synthetic_dir: "./data/synthetic_dataset"
+  use_synthetic_fallback: true
+  num_frames: 16
+  frame_stride: 1
+  resolution: [64, 64] # [Height, Width] for training, scalable to [128, 128], [256, 256]
+  channels_rgb: 3
+  channels_depth: 1
+  channels_normal: 3
+  modalities: ["rgb", "depth", "normal"]
+  augmentations:
+    horizontal_flip_prob: 0.5
+    temporal_reverse_prob: 0.1
+    color_jitter: false
+
+model:
+  in_channels: 3 # RGB video channels
+  cond_channels: 4 # 1 (Depth) + 3 (Surface Normal)
+  out_channels: 3
+  model_channels: 64
+  channel_mult: [1, 2, 4, 8]
+  num_res_blocks: 2
+  attention_resolutions: [16, 8] # Resolutions at which to apply spatial attention
+  temporal_attention: true
+  temporal_conv_kernel_size: 3
+  dropout: 0.1
+  use_hf_unet_backbone: true # Uses Hugging Face UNet2D / UNet2DConditionModel as spatial foundation
+  hf_model_id: "google/ddpm-cifar10-32" # Optional base HF checkpoint for weights transfer
+
+diffusion:
+  algorithm: "ddpm" # "ddpm", "ddim"
+  timesteps: 1000
+  beta_schedule: "cosine" # "linear", "cosine", "sigmoid"
+  beta_start: 0.0001
+  beta_end: 0.02
+  prediction_type: "epsilon" # "epsilon", "sample", "v_prediction"
+  loss_type: "mse" # "mse", "l1", "min_snr_gamma"
+  min_snr_gamma: 5.0
+  temporal_loss_weight: 0.1 # Weight for temporal gradient consistency loss
+
+sampling:
+  method: "ddim" # "ddpm" (1000 steps) or "ddim" (fast 20-50 steps)
+  ddim_timesteps: 50
+  ddim_eta: 0.0 # 0.0 = deterministic DDIM, 1.0 = DDPM
+  cfg_scale: 3.5 # Classifier-free guidance scale
+  batch_size: 4
+  num_samples: 8
+  save_format: ["gif", "mp4", "png_grid"]
+  fps: 8
+
+training:
+  batch_size: 4
+  num_workers: 2
+  learning_rate: 1.0e-4
+  adam_beta1: 0.9
+  adam_beta2: 0.999
+  adam_weight_decay: 1.0e-4
+  lr_warmup_steps: 500
+  total_steps: 50000
+  gradient_accumulation_steps: 2
+  max_grad_norm: 1.0
+  mixed_precision: "fp16" # "no", "fp16", "bf16"
+  ema_decay: 0.9999
+  ema_start_step: 1000
+  checkpoint_interval: 2500
+  sample_interval: 1000
+  log_interval: 100
+  output_dir: "./experiments/run_001"
+

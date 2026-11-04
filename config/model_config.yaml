@@ -1,0 +1,46 @@
+# Model Architecture Configuration
+# Spatio-Temporal UNet with Hugging Face integration and Multimodal conditioning
+
+unet:
+  sample_size: 64
+  in_channels: 3
+  out_channels: 3
+  down_block_types:
+    - "DownBlock3D"
+    - "CrossAttnDownBlock3D"
+    - "CrossAttnDownBlock3D"
+    - "DownBlock3D"
+  up_block_types:
+    - "UpBlock3D"
+    - "CrossAttnUpBlock3D"
+    - "CrossAttnUpBlock3D"
+    - "UpBlock3D"
+  block_out_channels:
+    - 64
+    - 128
+    - 256
+    - 512
+  layers_per_block: 2
+  downsample_padding: 1
+  mid_block_scale_factor: 1.0
+  act_fn: "silu"
+  norm_num_groups: 32
+  norm_eps: 1.0e-5
+  cross_attention_dim: 256
+  attention_head_dim: 32
+  num_attention_heads: 4
+  temporal_attention_heads: 4
+  temporal_position_encoding_type: "rotary" # "sinusoidal", "rotary", "learned"
+  zero_init_last_conv: true # Zero-initialize the temporal projection convolution to start as identity
+
+conditioning:
+  use_depth_condition: true
+  depth_channels: 1
+  use_normal_condition: true
+  normal_channels: 3
+  conditioning_method: "concatenation_and_cross_attention" # "concatenation", "cross_attention", "concatenation_and_cross_attention"
+  condition_encoder:
+    in_channels: 4 # 1 (depth) + 3 (normal)
+    hidden_dims: [64, 128, 256]
+    out_dim: 256
+
