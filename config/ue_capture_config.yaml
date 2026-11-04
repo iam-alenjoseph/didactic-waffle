@@ -1,0 +1,63 @@
+# Unreal Engine 5 Automated Data Collection Configuration
+# Automated via Unreal Python API (`import unreal`)
+
+engine:
+  editor_path: "C:/Program Files/Epic Games/UE_5.4/Engine/Binaries/Win64/UnrealEditor-Cmd.exe"
+  project_path: "C:/UnrealProjects/GenerativeDiffusionSim/GenerativeDiffusionSim.uproject"
+  map_name: "/Game/Maps/SyntheticStudio"
+  headless: true
+  null_rhi: false # Set to true only if no GPU display available; False enables full Nanite/Lumen rendering
+
+capture:
+  output_root: "./data/unreal_dataset"
+  resolution:
+    width: 256
+    height: 256
+  fps: 30
+  frame_count_per_clip: 16
+  stride_frames: 2 # Capture every N-th tick to control motion velocity
+  total_clips_to_generate: 100
+  warmup_frame_count: 30 # Let physics & Lumen settle before capturing
+
+passes:
+  rgb:
+    enabled: true
+    format: "PNG"
+    color_bit_depth: 8
+    render_pass_name: "FinalImage" # Standard lit RGB
+  depth:
+    enabled: true
+    format: "PNG" # 16-bit grayscale PNG or 32-bit EXR
+    bit_depth: 16
+    render_pass_name: "SceneDepth"
+    max_depth_meters: 50.0
+    normalize_to_range: [0.0, 1.0]
+  normals:
+    enabled: true
+    format: "PNG"
+    color_bit_depth: 8
+    render_pass_name: "WorldNormal"
+    coordinate_space: "World" # "World" or "View"
+    encode_formula: "0.5 * (N + 1.0)" # Encodes unit normal [-1, 1] into [0, 1] RGB
+  metadata:
+    enabled: true
+    save_intrinsics: true
+    save_extrinsics: true
+    format: "JSON"
+
+trajectories:
+  modes:
+    - "orbit"           # Orbit around center object with varying elevation and radius
+    - "spline_flythrough" # Cinematic spline-driven fly-through
+    - "perlin_6dof"     # Dynamic 6-degrees-of-freedom procedural camera exploration
+  orbit_settings:
+    center_location: [0.0, 0.0, 50.0]
+    radius_range: [200.0, 500.0]
+    elevation_range: [15.0, 65.0]
+    angular_speed_deg_per_sec: [15.0, 45.0]
+  camera_intrinsics:
+    fov: 60.0
+    aspect_ratio: 1.0
+    sensor_width: 36.0
+    sensor_height: 36.0
+
