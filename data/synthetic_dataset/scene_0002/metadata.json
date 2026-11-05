@@ -1,0 +1,319 @@
+{
+  "scene_id": 2,
+  "num_frames": 16,
+  "fps": 15,
+  "resolution": [
+    64,
+    64
+  ],
+  "camera_intrinsics": {
+    "fov_degrees": 60.0,
+    "aspect_ratio": 1.0
+  },
+  "frames": [
+    {
+      "frame_index": 0,
+      "timestamp_sec": 0.0,
+      "camera_extrinsics": {
+        "location": [
+          -2.9584233800085595,
+          1.5537032994391438,
+          3.283459393586146
+        ],
+        "rotation_euler": [
+          -19.368808744336672,
+          42.0191067892074,
+          0.0
+        ]
+      },
+      "rgb_path": "rgb/frame_0000.png",
+      "depth_path": "depth/depth_0000.png",
+      "normal_path": "normals/normal_0000.png"
+    },
+    {
+      "frame_index": 1,
+      "timestamp_sec": 0.06666666666666667,
+      "camera_extrinsics": {
+        "location": [
+          -2.8486008923586303,
+          1.5537032994391438,
+          3.379178515669747
+        ],
+        "rotation_euler": [
+          -19.368808744336672,
+          40.130426858713605,
+          0.0
+        ]
+      },
+      "rgb_path": "rgb/frame_0001.png",
+      "depth_path": "depth/depth_0001.png",
+      "normal_path": "normals/normal_0001.png"
+    },
+    {
+      "frame_index": 2,
+      "timestamp_sec": 0.13333333333333333,
+      "camera_extrinsics": {
+        "location": [
+          -2.7356833826676,
+          1.5537032994391438,
+          3.471226139926169
+        ],
+        "rotation_euler": [
+          -19.368808744336672,
+          38.241746928219754,
+          0.0
+        ]
+      },
+      "rgb_path": "rgb/frame_0002.png",
+      "depth_path": "depth/depth_0002.png",
+      "normal_path": "normals/normal_0002.png"
+    },
+    {
+      "frame_index": 3,
+      "timestamp_sec": 0.2,
+      "camera_extrinsics": {
+        "location": [
+          -2.61979353649043,
+          1.5537032994391438,
+          3.5595022560567853
+        ],
+        "rotation_euler": [
+          -19.368808744336672,
+          36.35306699772596,
+          0.0
+        ]
+      },
+      "rgb_path": "rgb/frame_0003.png",
+      "depth_path": "depth/depth_0003.png",
+      "normal_path": "normals/normal_0003.png"
+    },
+    {
+      "frame_index": 4,
+      "timestamp_sec": 0.26666666666666666,
+      "camera_extrinsics": {
+        "location": [
+          -2.501057268843576,
+          1.5537032994391438,
+          3.643910951529289
+        ],
+        "rotation_euler": [
+          -19.368808744336672,
+          34.464387067232124,
+          0.0
+        ]
+      },
+      "rgb_path": "rgb/frame_0004.png",
+      "depth_path": "depth/depth_0004.png",
+      "normal_path": "normals/normal_0004.png"
+    },
+    {
+      "frame_index": 5,
+      "timestamp_sec": 0.3333333333333333,
+      "camera_extrinsics": {
+        "location": [
+          -2.379603587397589,
+          1.5537032994391438,
+          3.724360515787227
+        ],
+        "rotation_euler": [
+          -19.368808744336672,
+          32.575707136738274,
+          0.0
+        ]
+      },
+      "rgb_path": "rgb/frame_0005.png",
+      "depth_path": "depth/depth_0005.png",
+      "normal_path": "normals/normal_0005.png"
+    },
+    {
+      "frame_index": 6,
+      "timestamp_sec": 0.4,
+      "camera_extrinsics": {
+        "location": [
+          -2.255564452309495,
+          1.5537032994391438,
+          3.800763539894075
+        ],
+        "rotation_euler": [
+          -19.368808744336672,
+          30.68702720624448,
+          0.0
+        ]
+      },
+      "rgb_path": "rgb/frame_0006.png",
+      "depth_path": "depth/depth_0006.png",
+      "normal_path": "normals/normal_0006.png"
+    },
+    {
+      "frame_index": 7,
+      "timestamp_sec": 0.4666666666666667,
+      "camera_extrinsics": {
+        "location": [
+          -2.1290746328472756,
+          1.5537032994391438,
+          3.873037011503584
+        ],
+        "rotation_euler": [
+          -19.368808744336672,
+          28.798347275750636,
+          0.0
+        ]
+      },
+      "rgb_path": "rgb/frame_0007.png",
+      "depth_path": "depth/depth_0007.png",
+      "normal_path": "normals/normal_0007.png"
+    },
+    {
+      "frame_index": 8,
+      "timestamp_sec": 0.5333333333333333,
+      "camera_extrinsics": {
+        "location": [
+          -2.0002715609622723,
+          1.5537032994391438,
+          3.941102405053176
+        ],
+        "rotation_euler": [
+          -19.368808744336672,
+          26.909667345256842,
+          0.0
+        ]
+      },
+      "rgb_path": "rgb/frame_0008.png",
+      "depth_path": "depth/depth_0008.png",
+      "normal_path": "normals/normal_0008.png"
+    },
+    {
+      "frame_index": 9,
+      "timestamp_sec": 0.6,
+      "camera_extrinsics": {
+        "location": [
+          -1.8692951819685146,
+          1.5537032994391438,
+          4.004885767082461
+        ],
+        "rotation_euler": [
+          -19.368808744336672,
+          25.020987414763,
+          0.0
+        ]
+      },
+      "rgb_path": "rgb/frame_0009.png",
+      "depth_path": "depth/depth_0009.png",
+      "normal_path": "normals/normal_0009.png"
+    },
+    {
+      "frame_index": 10,
+      "timestamp_sec": 0.6666666666666666,
+      "camera_extrinsics": {
+        "location": [
+          -1.7362878024913202,
+          1.5537032994391438,
+          4.064317796584101
+        ],
+        "rotation_euler": [
+          -19.368808744336672,
+          23.132307484269205,
+          0.0
+        ]
+      },
+      "rgb_path": "rgb/frame_0010.png",
+      "depth_path": "depth/depth_0010.png",
+      "normal_path": "normals/normal_0010.png"
+    },
+    {
+      "frame_index": 11,
+      "timestamp_sec": 0.7333333333333333,
+      "camera_extrinsics": {
+        "location": [
+          -1.6013939358502607,
+          1.5537032994391438,
+          4.119333920299784
+        ],
+        "rotation_euler": [
+          -19.368808744336672,
+          21.24362755377536,
+          0.0
+        ]
+      },
+      "rgb_path": "rgb/frame_0011.png",
+      "depth_path": "depth/depth_0011.png",
+      "normal_path": "normals/normal_0011.png"
+    },
+    {
+      "frame_index": 12,
+      "timestamp_sec": 0.8,
+      "camera_extrinsics": {
+        "location": [
+          -1.4647601450445944,
+          1.5537032994391438,
+          4.169874362879452
+        ],
+        "rotation_euler": [
+          -19.368808744336672,
+          19.354947623281518,
+          0.0
+        ]
+      },
+      "rgb_path": "rgb/frame_0012.png",
+      "depth_path": "depth/depth_0012.png",
+      "normal_path": "normals/normal_0012.png"
+    },
+    {
+      "frame_index": 13,
+      "timestamp_sec": 0.8666666666666667,
+      "camera_extrinsics": {
+        "location": [
+          -1.3265348835116726,
+          1.5537032994391438,
+          4.215884211827579
+        ],
+        "rotation_euler": [
+          -19.368808744336672,
+          17.466267692787724,
+          0.0
+        ]
+      },
+      "rgb_path": "rgb/frame_0013.png",
+      "depth_path": "depth/depth_0013.png",
+      "normal_path": "normals/normal_0013.png"
+    },
+    {
+      "frame_index": 14,
+      "timestamp_sec": 0.9333333333333333,
+      "camera_extrinsics": {
+        "location": [
+          -1.186868333831374,
+          1.5537032994391438,
+          4.257313477165936
+        ],
+        "rotation_euler": [
+          -19.368808744336672,
+          15.577587762293883,
+          0.0
+        ]
+      },
+      "rgb_path": "rgb/frame_0014.png",
+      "depth_path": "depth/depth_0014.png",
+      "normal_path": "normals/normal_0014.png"
+    },
+    {
+      "frame_index": 15,
+      "timestamp_sec": 1.0,
+      "camera_extrinsics": {
+        "location": [
+          -1.0459122445518527,
+          1.5537032994391438,
+          4.294117145747992
+        ],
+        "rotation_euler": [
+          -19.368808744336672,
+          13.688907831800089,
+          0.0
+        ]
+      },
+      "rgb_path": "rgb/frame_0015.png",
+      "depth_path": "depth/depth_0015.png",
+      "normal_path": "normals/normal_0015.png"
+    }
+  ]
+}
