@@ -1,0 +1,35 @@
+# Procedural Synthetic Dataset Generator Configuration
+# Zero-dependency 3D dynamic physics & camera simulation for immediate training / testing
+
+generator:
+  output_dir: "./data/synthetic_dataset"
+  num_scenes: 20
+  num_frames_per_scene: 16
+  resolution: [64, 64] # [Height, Width]
+  fps: 15
+  seed: 1337
+
+scene_objects:
+  num_objects_range: [3, 7]
+  primitive_types: ["sphere", "cube", "torus", "cylinder"]
+  dynamic_physics: true
+  gravity: [0.0, -9.8, 0.0]
+  elasticity: 0.85
+  rotation_speed_range: [-3.0, 3.0] # rad/sec
+
+lighting:
+  ambient_intensity: 0.25
+  key_light_direction: [0.577, 0.577, 0.577] # Normalized light vector
+  key_light_color: [1.0, 0.95, 0.9]
+
+camera:
+  trajectory_types: ["spiral", "orbit", "pan_zoom"]
+  fov_degrees: 60.0
+  camera_distance_range: [4.0, 7.0]
+
+output_passes:
+  generate_rgb: true
+  generate_depth: true
+  generate_normals: true
+  generate_metadata: true
+
